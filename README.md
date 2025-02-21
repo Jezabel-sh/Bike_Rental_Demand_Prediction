@@ -1,122 +1,83 @@
-import React, { useState } from 'react';
-import { Globe2 } from 'lucide-react';
+# Bike Rental Demand Prediction 🚴‍♂️📊
 
-const BikeRentalPage = () => {
-  const [language, setLanguage] = useState('spanish');
+*[English](#english) | [Español](#español)*
 
-  const content = {
-    spanish: {
-      title: 'Predicción de Demanda de Alquiler de Bicicletas 🚴‍♂️📊',
-      sections: [
-        {
-          title: '📝 Descripción del Proyecto',
-          content: 'Este proyecto se centra en predecir la demanda de alquiler de bicicletas utilizando modelos de regresión. El objetivo es predecir el número de bicicletas alquiladas en función de datos meteorológicos y estacionales.'
-        },
-        {
-          title: '🛠️ Tecnologías Utilizadas',
-          items: [
-            { title: 'Python', desc: 'El lenguaje de programación principal utilizado para el análisis de datos y la construcción de modelos.' },
-            { title: 'Pandas', desc: 'Para la manipulación y análisis de datos.' },
-            { title: 'NumPy', desc: 'Para cálculos numéricos.' },
-            { title: 'Matplotlib & Seaborn', desc: 'Para la visualización de datos.' },
-            { title: 'Scikit-learn', desc: 'Para modelos de aprendizaje automático y métricas de evaluación.' },
-            { title: 'XGBoost', desc: 'Para modelos avanzados de regresión.' },
-            { title: 'Statsmodels', desc: 'Para análisis estadístico y cálculo del factor de inflación de la varianza (VIF).' }
-          ]
-        }
-      ]
-    },
-    english: {
-      title: 'Bike Rental Demand Prediction 🚴‍♂️📊',
-      sections: [
-        {
-          title: '📝 Project Overview',
-          content: 'This project focuses on predicting bike rental demand using regression models. The goal is to forecast the number of rented bikes based on weather and seasonal data.'
-        },
-        {
-          title: '🛠️ Technologies Used',
-          items: [
-            { title: 'Python', desc: 'The primary programming language used for data analysis and model building.' },
-            { title: 'Pandas', desc: 'For data manipulation and analysis.' },
-            { title: 'NumPy', desc: 'For numerical computations.' },
-            { title: 'Matplotlib & Seaborn', desc: 'For data visualization.' },
-            { title: 'Scikit-learn', desc: 'For machine learning models and evaluation metrics.' },
-            { title: 'XGBoost', desc: 'For advanced regression modeling.' },
-            { title: 'Statsmodels', desc: 'For statistical analysis and variance inflation factor (VIF) calculation.' }
-          ]
-        }
-      ]
-    }
-  };
+## English
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-blue-900 text-white py-6 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold text-center mb-6">
-            {content[language].title}
-          </h1>
-          
-          {/* Language Toggle */}
-          <div className="flex justify-center gap-4">
-            <button
-              onClick={() => setLanguage('spanish')}
-              className={`px-4 py-2 rounded-lg flex items-center gap-2 ${
-                language === 'spanish' 
-                  ? 'bg-yellow-500 text-blue-900 font-bold'
-                  : 'bg-blue-800 hover:bg-blue-700'
-              }`}
-            >
-              <Globe2 size={20} />
-              Español
-            </button>
-            <button
-              onClick={() => setLanguage('english')}
-              className={`px-4 py-2 rounded-lg flex items-center gap-2 ${
-                language === 'english'
-                  ? 'bg-yellow-500 text-blue-900 font-bold'
-                  : 'bg-blue-800 hover:bg-blue-700'
-              }`}
-            >
-              <Globe2 size={20} />
-              English
-            </button>
-          </div>
-        </div>
-      </header>
+### 📝 Project Overview
+This project focuses on predicting bike rental demand using regression models. The goal is to forecast the number of rented bikes based on weather and seasonal data. The project involves data loading, cleaning, exploratory data analysis (EDA), and the application of various machine learning models to predict bike rental counts.
 
-      {/* Main Content */}
-      <main className="max-w-4xl mx-auto py-8 px-4">
-        {content[language].sections.map((section, index) => (
-          <section key={index} className="mb-12">
-            <h2 className="text-2xl font-bold mb-4 text-blue-900">
-              {section.title}
-            </h2>
-            
-            {section.content && (
-              <p className="text-gray-700 leading-relaxed mb-6">
-                {section.content}
-              </p>
-            )}
-            
-            {section.items && (
-              <ul className="space-y-4">
-                {section.items.map((item, i) => (
-                  <li key={i} className="bg-white p-4 rounded-lg shadow-sm">
-                    <h3 className="font-bold text-blue-900 mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600">{item.desc}</p>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </section>
-        ))}
-      </main>
-    </div>
-  );
-};
+### 🛠️ Technologies Used
+- **Python**: The primary programming language used for data analysis and model building
+- **Pandas**: For data manipulation and analysis
+- **NumPy**: For numerical computations
+- **Matplotlib & Seaborn**: For data visualization
+- **Scikit-learn**: For machine learning models and evaluation metrics
+- **XGBoost**: For advanced regression modeling
+- **Statsmodels**: For statistical analysis and variance inflation factor (VIF) calculation
 
-export default BikeRentalPage;
+### 📂 Project Structure
+- **Data Loading & Overview**: Load the dataset and perform an initial exploration
+- **Data Cleaning**: Handle missing values, categorical variables, and feature engineering
+- **Exploratory Data Analysis (EDA)**: Analyze trends and correlations between variables
+- **Model Building**: Apply various regression models to predict bike rental demand
+- **Model Evaluation**: Use metrics like Mean Absolute Error (MAE), Mean Squared Error (MSE), and R-squared (R²) to evaluate model performance
+
+### 🚀 Key Features
+- **Data Cleaning**: Comprehensive handling of missing values and categorical data
+- **EDA**: Detailed visualizations to understand data trends and relationships
+- **Modeling**: Application of multiple regression models including Linear Regression, Random Forest, Gradient Boosting, and XGBoost
+- **Hyperparameter Tuning**: Use of RandomizedSearchCV for optimizing model parameters
+
+### 📊 Results
+The project demonstrates the effectiveness of different regression models in predicting bike rental demand. The best-performing model is selected based on evaluation metrics, providing insights into the factors influencing bike rentals.
+
+### 📄 Repository Structure
+- **bike_analysis.ipynb**: Jupyter notebook containing the complete analysis and code
+- **data/day.csv**: Dataset used for the analysis
+- **README.md**: This file, providing an overview of the project
+
+### 🙏 Acknowledgments
+- Special thanks to the open-source community for providing the tools and libraries used in this project
+- Inspiration and guidance from various online resources and tutorials
+
+---
+
+## Español
+
+### 📝 Descripción del Proyecto
+Este proyecto se centra en predecir la demanda de alquiler de bicicletas utilizando modelos de regresión. El objetivo es predecir el número de bicicletas alquiladas en función de datos meteorológicos y estacionales. El proyecto incluye la carga de datos, limpieza, análisis exploratorio de datos (EDA) y la aplicación de varios modelos de aprendizaje automático.
+
+### 🛠️ Tecnologías Utilizadas
+- **Python**: El lenguaje de programación principal utilizado para el análisis de datos y la construcción de modelos
+- **Pandas**: Para la manipulación y análisis de datos
+- **NumPy**: Para cálculos numéricos
+- **Matplotlib & Seaborn**: Para la visualización de datos
+- **Scikit-learn**: Para modelos de aprendizaje automático y métricas de evaluación
+- **XGBoost**: Para modelos avanzados de regresión
+- **Statsmodels**: Para análisis estadístico y cálculo del factor de inflación de la varianza (VIF)
+
+### 📂 Estructura del Proyecto
+- **Carga y Visión General de los Datos**: Cargar el conjunto de datos y realizar una exploración inicial
+- **Limpieza de Datos**: Manejo de valores faltantes, variables categóricas y ingeniería de características
+- **Análisis Exploratorio de Datos (EDA)**: Análisis de tendencias y correlaciones entre variables
+- **Construcción de Modelos**: Aplicación de varios modelos de regresión para predecir la demanda
+- **Evaluación de Modelos**: Uso de métricas como Error Absoluto Medio (MAE), Error Cuadrático Medio (MSE) y R-cuadrado (R²)
+
+### 🚀 Características Principales
+- **Limpieza de Datos**: Manejo exhaustivo de valores faltantes y datos categóricos
+- **EDA**: Visualizaciones detalladas para comprender tendencias y relaciones en los datos
+- **Modelado**: Aplicación de múltiples modelos de regresión incluyendo Regresión Lineal, Bosques Aleatorios, Gradient Boosting y XGBoost
+- **Optimización de Hiperparámetros**: Uso de RandomizedSearchCV para optimizar los parámetros de los modelos
+
+### 📊 Resultados
+El proyecto demuestra la efectividad de diferentes modelos de regresión en la predicción de la demanda de alquiler de bicicletas. El modelo con mejor rendimiento se selecciona en función de las métricas de evaluación, proporcionando información sobre los factores que influyen en los alquileres.
+
+### 📄 Estructura del Repositorio
+- **bike_analysis.ipynb**: Cuaderno de Jupyter que contiene el análisis completo y el código
+- **data/day.csv**: Conjunto de datos utilizado para el análisis
+- **README.md**: Este archivo, que proporciona una visión general del proyecto
+
+### 🙏 Agradecimientos
+- Un agradecimiento especial a la comunidad de código abierto por proporcionar las herramientas y bibliotecas utilizadas en este proyecto
+- Inspiración y orientación de varios recursos y tutoriales en línea
